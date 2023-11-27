@@ -1,0 +1,173 @@
+package banking;
+
+import java.util.*;
+import java.util.Scanner;
+class Method
+{    
+	final long ACCOUNT_NUMBER=344385921;  
+     final long PHONE=851992277;
+	 int pin_number=7119;
+	int one_time_password=2779;
+	
+	     
+	
+void checking(int a)// first Method checking pin()
+{
+	int c=1,n=a;
+	do
+	
+	   {
+	
+	    	  if(n==pin_number)
+	    	  {
+	    		  System.out.println("                              "+"*****SELECT AN OPATION WHICH YOU WANT*****");
+	    		  System.out.println("\t");
+	    	      System.out.println("PRESS 1 ---> TO PIN GENERATION     :");
+	    	      System.out.println("PRESS 2 ---> TO PIN CHANGE         :");
+	    	      System.out.println("PRESS 3 ---> TO BALANCE ENQUIRY    :");
+	    	      System.out.println("PRESS 4 ---> TO WITHDRAWAL         :");
+	    	      System.out.println("PRESS 5 ---> TO DEPOSITE           :");
+	    	      System.out.println("PRESS 6 ---> TO MINI STATEMENT     :");
+	    	      System.out.println("PRESS 0 ---> TO EXIT               :");
+	    	      System.out.println("\t");	
+	    	      
+	    	    /*  CALLING ALL METHODS HERE  */
+	    	      
+	    	      Scanner input=new Scanner(System.in); 
+	    	       int x=input.nextInt();
+	    	           if(x==1)   // Pin generation
+	    	           {
+	    	        	 Method pin=new Method();
+	    	        	     pin.pingeneration();   // method calling 
+	    	           }
+	    	           else
+	    	        	   if(x==2)  //Pin change
+	    	        	   {
+	    	        		  Method pinc=new Method();
+	    	        		  pinc.pinchange();   // method calling 
+	    	        	   }
+	    	        	   else
+	    	        		   if(x==3) //Balance enquiry
+	    	        		   {
+	    	        			   Method pine=new Method();
+	    	        			   pine.balanceenuiry(); // method calling
+	    	        		   }
+	    	        		   else
+	    	        			   if(x==4)
+	    	        			   {
+	    	        				   Method draw=new Method();
+	    	        						   draw.withdrawal(); // method calling
+	    	        			   }
+	    	        			   else
+	    	        				   if(x==5)
+	    	        				   {
+	    	        					   Method depo=new Method();
+	    	        					   depo.deposite(); // method calling
+	    	        			        } 
+	    	        				   else
+	    	        					   if(x==6)
+	    	        					   {
+	    	        						   Method statement=new Method();
+	    	        						   statement.ministatement(); //method calling
+	    	        					   }
+	    	            
+	    	        					   else
+	    	        					   
+	    	        					   if(x==0)
+	    	        					   {
+	    	        						   Method v=new Method();// end2 method()
+	    	        			                 v.end2(); 
+	    	        				
+	    	        								   
+	    	        					   }
+                  	    	      
+	    	        					   else {
+	    	      
+	    	              
+	    	      Method v=new Method();// end2 method()
+	                 v.end2();  
+	    	        					   }
+	    	        break;
+	    	  
+	    	  
+	           }
+	    	 else { 
+	    		 if(c<=2) {
+	    		 System.out.println("                                   "+"###YOU HAVE ENTERD INCORRECT PIN###");
+	    		 System.out.println("\t");
+	    		 Scanner s=new Scanner(System.in);
+	    	     System.out.println("PLESE ENTER CORRECT PIN");
+	    	            int y=s.nextInt();
+	    	               a=y;
+	    	           c++;}
+	    		 else {
+	    		 System.out.println("                                   "+"###YOU HAVE ENTERD INCORRECT PIN###");
+	    		 System.out.println("\t");
+	    			  System.out.println("---you have reached maximum atteempts---");
+	    			  System.out.println("\t");
+	    			Method e=new Method();
+	    			     e.end1(); 
+	    			     break;}
+	    	 }
+	}
+	while(true);
+	
+	
+}
+void pingeneration()// pin generation method
+{
+	System.out.println("pin generation");
+}
+void pinchange()// pin change method
+{
+	System.out.println("pinchange");
+}
+void balanceenuiry()// balance enquiry
+{
+	System.out.println("balance");
+}
+void withdrawal()  // withdrwal
+{
+	System.out.println("withdrawal");
+}
+void deposite()  // deposite
+{
+	System.out.println("deposite");
+}
+void ministatement()// Mini statement
+{
+	System.out.println("ministatement");
+}
+void exit() // Exit
+{
+	System.out.println("exit");
+}
+
+
+
+
+void end1()//END METHOD1()
+{
+	System.out.println("                                   "+"***LAST TRANSACATION DECLINED***");
+}
+void end2()//END METOHD2()
+{
+	System.out.println("                                   "+"***THANK YOU FOR VISITE***");
+}
+
+
+}
+public class ATM
+{
+	public static void main(String[] args) //main method
+	{
+		System.out.println("                                   "+"=====PLESE INSET THE CARD=====");
+		Scanner input=new Scanner (System.in);
+		System.out.print("     "+"ENTER YOUR PIN : ");
+		int pin=input.nextInt();
+		
+		Method m=new Method();        //First method creation()
+		   m.checking(pin);   //First method calling()
+		 }
+
+}
